@@ -4,6 +4,7 @@ import connectDB from './db/connectToMongo.js';
 import bodyParser from 'body-parser';
 import CardRoute from './routes/card.route.js';
 import CardSecondRoute from './routes/cardSecond.route.js';
+import CardThirdRoute from './routes/cardThird.route.js';
 import cors from 'cors';
 
 dotenv.config();
@@ -15,6 +16,7 @@ app.use(bodyParser.json());
 connectDB();
 app.use('/api/cards', CardRoute);
 app.use('/api/cards/second', CardSecondRoute);  
+app.use('/api/cards/third', CardThirdRoute);  
 
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => console.log(`Server is running on port ${PORT}`));
